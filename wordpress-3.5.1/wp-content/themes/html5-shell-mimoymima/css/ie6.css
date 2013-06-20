@@ -1,0 +1,4 @@
+/* IE Win 6 and below hacks */
+
+/* Self Clearing Floats */
+.clear-fix { min-height: 1%; }

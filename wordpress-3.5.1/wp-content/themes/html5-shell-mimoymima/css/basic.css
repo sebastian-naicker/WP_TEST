@@ -1,0 +1,152 @@
+/*
+	##     MYM BASIC STYLESHEET
+	##     basic for HTML5 v1.21
+	##     Updated: May 02, 2011
+	##     brent@mimoYmima.com
+	
+	NOTE: you probably won't ever need to change anything in this stylesheet,
+	it sets base styles and gives you some useful classes to use in your HTML
+	(see classes section below)
+	any visual changes you want to make to this CSS you should make in style.css
+*/
+
+
+/* - - - RESET & some default styling - - - */
+
+	/* default style for new html5 elements */
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+	{ display: block; }
+
+	/* Equilizes Most Cross-Browser Inconsistancies */
+	html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video
+	{ margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+	
+	/* Some items we pulled from reset.css */
+	body { line-height: 1; }
+	
+	nav ul { list-style: none; }
+
+	blockquote, q { quotes: none; }
+
+	blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+	a { margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+
+	/* change colours to suit your needs */
+	mark { background-color: #FF9; color: #000; font-style: italic; font-weight: bold; }
+
+	abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
+
+	table { border-collapse: collapse; border-spacing: 0; }
+
+	/* you can change border color in style.css if needed */
+	hr { display: block; height: 1px; border: 0; border-top: 1px solid #CCC; margin: 1em 0; padding: 0; }
+	
+	/* -- forms -- */
+	label, input, select, .Icon, .Button { vertical-align: middle; }
+	label { cursor: pointer; }
+	input, textarea { font-size: 1em; padding: .2em .4em; -moz-border-radius: 2px; -khtml-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; }
+
+	/* -- Text -- */
+	p { margin-bottom: 1.5em; }
+	sup, sub { font-size: 80%; }
+	ins { border-bottom: 1px dotted #666; }
+	del { text-decoration: line-through; }
+
+	/* -- Lists -- */
+	ol { margin: 0 50px 1.5em 50px; }
+	ol li { margin-bottom: 1em; }
+		
+	/* -- Other -- */
+	code { font-family: 'Andale Mono', 'Lucida Console', "courier new", courier, monospace; background-color: #069; color: #FFF; padding: .5em; -moz-border-radius: 5px; -khtml-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
+	pre code { line-height: 130%; display: block; padding: 1em; margin: 2em 0; overflow: auto; }
+	pre { margin: 1em; }
+	abbr, acronym { border-bottom: 1px dotted #666; }
+	address { margin-bottom: 1.5em; }
+	table { border-collapse: collapse; }
+
+
+/* - - - CLASSES - - - */
+
+	/* - - Text - - */
+	.lowercase { text-transform: lowercase; }
+	.uppercase { text-transform: uppercase; }
+	.footnote { vertical-align: baseline; position: relative; top: -0.9ex; font-size: 80%; margin-left: 0.2em; margin-right: 0.1em; }
+	
+	/* -- Forms -- */
+	.button { padding: .1em; cursor: pointer !important; }
+
+	/* - - Lists - - */
+
+	/* dict list */
+	.dict-list { margin: 2em 0; padding: 0; }
+	.dict-list dt { position: relative; left: 0; top: 2em; width: 13em; font-weight: bold; }
+	.dict-list dt a { display block; width: 13em; }
+	.dict-list dd { border-left: 1px solid rgb(255, 255, 255); border-left: 1px solid rgba(255, 255, 255, 0.5); margin: 0 0 0 15em; padding: 0 0 .5em 1em; }
+
+	/* .no-bullet: list without bullets */
+	.no-bullet { list-style-type: none; margin-bottom: 2em; }
+	.no-bullet li { margin-bottom: .5em; }
+
+	/* .bullet-list: nicer formatting for a bulleted list */
+	.bullet-list { margin: 1em 0 2em 0; line-height: 150%; }
+	.bullet-list li { margin: 0 2em 1em 2em; list-style-type: square; }
+	.bullet-list li ul { margin: .5em 0 1.5em 0; }
+	.bullet-list li ul li { list-style-type: circle; margin: 0 2em .5em 2em; }
+
+	/* .horiz-list: Used to put a list inline (horizontal) and get rid of the bullets */
+	.horiz-list ul { float: left; list-style-type: none; }
+	.horiz-list li { float: left; display: inline; }
+	.horiz-list li a { display: block; float: left; width: auto;  }
+
+	/* .horiz-list: This version of horizlist floats the items right instead of left */
+	.horiz-list-rt ul { float: right; list-style-type: none; }
+	.horiz-list-rt li { float: right; display: inline; }
+	.horiz-list-rt li a { display: block; width: auto; }
+
+	.link-list li { list-style-type: none; }
+	li.link-list a, ul.link-list li a { display: block; background: url(../images/icon_link_arrow.png) 0px 8px no-repeat; padding-left: 20px; margin-left: 20px;  }
+	
+	.pdf-link { padding-left: 20px; margin-left: 5px; }
+	.pdf-list li { list-style-type: none; }
+	li.pdf-list a, ul.pdf-list li a { display: block; background: url(../images/icon_pdf_sm.png) 0 3px no-repeat; padding-left: 20px; margin-left: 20px; }
+	
+	/* Form Lists */	
+	.radio-list li { list-style-type: none !important; margin-bottom: .5em; text-indent: -20px; padding-left: 20px; vertical-align: top; }
+	.radio-list li label { display: inline !important; vertical-align: bottom; margin-left: 7px; }
+
+	.input-list li { list-style-type: none !important; margin-bottom: 1em; vertical-align: top; }
+	.input-list li label { display: block; vertical-align: top; }
+	.input-list li { clear: both; }
+
+	/* Links */
+	.link-up { text-align: right;}
+	.link-up a { margin-left: 1.5em; }
+	
+	/* Columns */
+	.cols { width: 100%; } /* overflow: hidden; */
+		/* Col */
+		.col { float: left; clear: none; }
+		.gap { margin-right: 10px; }
+		
+	/* System Messages */
+	.sys { font-weight: bold; color: #333 !important; padding: 10%; margin: 5px; line-height: 150%; -moz-border-radius: 5px; -khtml-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
+	.sys a:link, .sys a:visited { color: #333; text-decoration: underline; }
+	.sys a:hover, .sys a:active { color: #333; text-decoration: none; }
+	.sys ul { margin-left: 3em; }
+	.msg { background: #0F0; }
+	.warn { background: #FF0; }
+	.error { background: #F66; }
+
+	/* TODO: might try this one instead one day: http://nicolasgallagher.com/micro-clearfix-hack */
+	/* Clear Floats - two methods, clear-fix is attached to the element you want to clear, .clear-all you can attach to a hr or br tag to clear the item before it as a last resort when you're in a hurry */
+	.clear-fix { display: inline-block; } /* This needs to be first because FF3 is now supporting this */
+	.clear-fix:after { content: " "; display: block; height: 0; clear: both; font-size: 0; visibility: hidden; }
+	.clear-all { visibility: hidden; clear: both; margin: 0 !important; padding: 0 !important; font-size: 0; height: 1px; }
+
+  	/* Alignment : don't change these class names, they need to be this way for wordpress but could be used for other sites this way too */
+	img.aligncenter { display: block; margin: 5px auto; }
+    img.alignright { padding: 4px; margin: 0 0 2px 7px; display: inline; }
+    img.alignleft { padding: 4px; margin: 0 7px 2px 0; display: inline; }
+    .alignright { float: right; }
+	.alignleft { float: left; }
