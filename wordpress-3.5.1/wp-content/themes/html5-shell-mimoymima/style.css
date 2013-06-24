@@ -1,0 +1,233 @@
+/*
+Theme Name: html5 shell by mimoYmima.com
+Theme URI: http://html5.mimoymima.com/
+Description: a Framework for rapidly developing HTML5 based WordPress Themes
+Version: 1.32
+Author: Brent Lagerman
+Author URI: http://mimoymima.com/
+*/
+
+/*
+v1.32 Shell Updates:
+	• re-thought the use of section element inside of article on most templates, now we're going with article and div section was semantically not needed
+	• took the horiz-list class off of meta-data in a few templates, it was messing up the rendering of tags (floating them and causing a bunch of commas floated left...)
+	• minor fixes to the archives template
+	• changed <section id="footer"> to <footer id="footer"> in footer.php
+	• adding google analytics for Wordpress plugin to plugins pack
+	• added awesome buttons to style.css (see below)
+	* todo: use second link listed in comments.php and HTML5 book by Remy Sharp to get the comments using more semantic code
+*/
+
+/*
+	##		Site Title
+	##		Updated: Mar 18, 2011
+  	##		your email address
+  
+	- - - Color References - - -
+	link blue: #39C;
+	background: #efefef;
+*/
+
+
+/* FONTS - to get other font kits visit: fontsquirrel.com */
+	
+	@font-face {
+	font-family: 'MisoLight';
+	src: url('fonts/miso-light-webfont.eot?') format('eot'), 
+	     url('fonts/miso-light-webfont.woff') format('woff'), 
+	     url('fonts/miso-light-webfont.ttf')  format('truetype'),
+	     url('fonts/miso-light-webfont.svg#webfontR7AhzoT1') format('svg');
+	}
+
+/* GENERAL STYLING - - - - - - - - - - - - - - - - */
+
+	html { color: #333; background: #EFEFEF; } /*remove this background if you're using 100% background image*/
+
+	/* Sets fonts, page width & margins */
+	body { width: 980px; margin: 0 auto; font: 300 1em/150% 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'myriad pro', 'myriad web pro', 'myriad web', myriad, helvetica, sans-serif; }
+	
+	/* Font stacks - some premade stacks you could use, by default we're using the sans stack above */
+	.serif { font-family: cambria, baskerville, cochin, georgia, times, serif; }
+	.monospace { font-family: 'courier new', courier, Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace; }
+	.sans { font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'myriad pro', 'myriad web pro', 'myriad web', myriad, helvetica, sans-serif; }
+	
+	/* Text */
+	blockquote { margin: 20px 0 !important; }	
+	blockquote cite { padding: 1em 0 .5em 0; display: block; text-align: right; }
+
+	/* Headings */
+	h1, h2, h3, h4, h5, h6 { font-weight: 500; font-family: 'MisoLight', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'myriad pro', 'myriad web pro', 'myriad web', myriad, helvetica, sans-serif; }
+	#content h2 { font-size: 1.5em; margin: 1em 0; }
+
+	/* Links */
+	a:link, a:visited { color: #39C; text-decoration: underline; }
+	a:hover, a:active, a:focus { color: #F90; text-decoration: none; }
+	
+	/* Forms */
+	
+		/* labels */
+		label { color: #39C; }
+		label:hover, label:focus { color: #F90; }
+
+		/* text inputs */
+		input, select, textarea, button { padding: 3px; margin-right: 5px; vertical-align: middle; -moz-border-radius: 7px; -khtml-border-radius: 7px; -webkit-border-radius: 7px; border-radius: 7px; }
+		input, select, textarea { color: #CCC; border: 3px solid #85C3D6; background: #F6F6F6; }
+		input:hover, select:hover, textarea:hover, input:focus, select:focus, textarea:focus { color: #666; background: #EDEDED; border-color: #39C; }
+
+		/* buttons */
+		input[type='submit'], button { background: #85C3D6; border: 0; padding: 4px; margin-top: 3px; color: #FFF; font-size: .8em; text-transform: uppercase; font-weight: bold; }
+		input[type='submit']:hover, button:hover, input[type='submit']:focus, button:focus { background: #39C; cursor: pointer; }
+		
+		/* awesome buttons :  http://www.zurb.com/blog_uploads/0000/0617/buttons-03.html */
+		.awesome, .awesome:visited { background: #222 url(/images/alert-overlay.png) repeat-x; display: inline-block; padding: 5px 10px 6px; color: #fff; text-decoration: none; -moz-border-radius: 5px; -webkit-border-radius: 5px; -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5); -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5); text-shadow: 0 -1px 1px rgba(0,0,0,0.25); border-bottom: 1px solid rgba(0,0,0,0.25); position: relative; cursor: pointer; }
+ 		.awesome:hover { background-color: #111; color: #fff; }
+		.awesome:active	{ top: 1px; }
+		.small.awesome, .small.awesome:visited { font-size: 11px; padding: ; }
+		.awesome, .awesome:visited,
+		.medium.awesome, .medium.awesome:visited { font-size: 13px; font-weight: bold; line-height: 1; text-shadow: 0 -1px 1px rgba(0,0,0,0.25); }
+		.large.awesome, .large.awesome:visited { font-size: 14px; padding: 8px 14px 9px; }
+		.green.awesome, .green.awesome:visited { background-color: #91bd09; }
+		.green.awesome:hover { background-color: #749a02; }
+		.blue.awesome, .blue.awesome:visited { background-color: #2daebf; }
+		.blue.awesome:hover { background-color: #007d9a; }
+		.red.awesome, .red.awesome:visited { background-color: #e33100; }
+		.red.awesome:hover { background-color: #872300; }
+		.magenta.awesome, .magenta.awesome:visited { background-color: #a9014b; }
+		.magenta.awesome:hover { background-color: #630030; }
+		.orange.awesome, .orange.awesome:visited { background-color: #ff5c00; }
+		.orange.awesome:hover { background-color: #d45500; }
+		.yellow.awesome, .yellow.awesome:visited { background-color: #ffb515; }
+		.yellow.awesome:hover { background-color: #fc9200; }
+		
+	
+	/* Tables */
+			
+	/* Hide These Elements but keep them accessible */
+	#accessibility,
+	#footer .vcard,
+	nav h1 { position: absolute; left: -999em; }
+	
+	/* Hide these items when Javascript is active */
+	.js #js-ind, .js .hide { display: none; }
+
+	
+
+/* Sections of the document (including layout) - - - - - - - - - - - - - - - - */
+	
+	/* page-wrapper */
+	#page-wrapper { }
+	
+	/* - - - HEADER - - - */
+	#site-header { }
+		#site-header .title { }
+		#site-header .description {  }	
+
+		/* Nav */
+		#main-nav a { font-size: 1.2em; text-decoration: none; display: inline-block; line-height: 1.8em; margin: 0 3px 3px 0; padding: 1em 2em; -moz-border-radius: 10px; -khtml-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; }
+		
+			/* Nav Links*/
+			#main-nav a:link, #main-nav a:visited  { color: #08BDE6; background: #CAF3FF; }
+			#main-nav a:hover, #main-nav a:active, #main-nav a:focus { color: #00A5CB; background: #95E8FF; text-decoration: underline; }
+
+			/* DownStates*/
+			#main-nav .current_page_item a { color: #C63 !important; background: #FFED66; cursor: default; }
+
+		/* Search */
+		#search-form input[type='text'] { width: 150px; }
+		
+	/* - - - CONTENT - - - */
+		
+	#content { width: 50%; float: left; padding-bottom: 5em; margin: 0 0 0 15%; line-height: 150%; }
+	#content p { margin-bottom: 1.5em; }
+	#content em { font-family: cambria, baskerville, cochin, georgia, times, serif; }	
+	
+		/* Posts */
+		.post { clear: both; padding: 2em 0 3em 0; }
+		.entry { }
+		article time { color: #999; font-size: .9em; margin-bottom: .5em; }
+		.entry p {}
+		.utw {}
+		.post_nav {}
+		.post-edit-link { }
+		.post-meta-data { width: 300px; }
+		.post-meta-data ul li { border-bottom: 1px dotted #666; }
+		.stbutton { float: left; } /* share this button */
+	
+		/* Page */
+		.page {}
+
+		/* Single */
+		.single {}
+
+		/* Comments using Intense Debate */
+			
+	
+	/* - - - SidebarLeft - - - */
+	#sidebar-left { float: left; width: 25%; list-style-type: none; margin-top: 100px; padding-bottom: 5em; margin-right: 2%; }
+	#sidebar-left h2 { margin: 2em 0 .5em 0; }
+	#sidebar-left ul { list-style-position: inside; }
+	#sidebar-left ul li { margin-bottom: 1em; }
+	
+	/* - - - SidebarRight - - - */
+	#sidebar-right { float: right; width: 25%; list-style-type: none; margin-top: 100px; padding-bottom: 5em; margin-left: 2%; }
+	#sidebar-right h2 { color: #999; font-size: 16px; margin-top: 1em; margin-bottom: .5em; }
+	#sidebar-right ul { list-style-position: inside; }
+	#sidebar-right ul li { margin-bottom: 1em; }
+
+	/* - - - WIDGETS - - - */
+
+	/* Calendar Widget Styling */
+	#calendar caption { background: #CCC; padding: 5px 0px; }
+	#calendar table { width: 170px; border: solid 1px #CCC; }
+	#calendar table th { text-align: center; letter-spacing: -1px; border-bottom: solid 1px #CCC; padding: 3px 0px; }
+	#calendar table td { text-align: center; padding: 3px 0px; font-size: .8em; }
+	#calendar table td a { font-weight: bold; }
+	#calendar h2 { padding-bottom: 8px; }
+	
+
+	/* - - - FOOTER - - - */
+	#footer { clear: both; padding-bottom: 20px; text-align: right; }
+
+		/* Footer Links */
+		#footer a { font-size: 1.4em; }
+		#footer a:link, #footer a:visited { color: #39C; text-decoration: none; }
+		#footer a:hover, #footer a:active, #footer a:focus { color: #000; text-decoration: underline; }
+		#footer .current-menu-item a { color: #000; }
+			
+		/* Credit */
+		#footer #mym-credit { font-size: .9em; clear: both; }
+		#footer #mym-credit a { letter-spacing: 1px; }
+		#footer #mym-credit a#cred:link, #footer #mym-credit a#cred:visited { text-decoration: none; color: #39C; }
+		
+
+
+/* jQuery Styles - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* preloader for site, relies on some js in the functions file and a div in the header (both commented out by default) */
+/*.js div#preloader { position: fixed; left: 0; top: 0; z-index: 999; width: 100%; height: 100%; overflow: visible; background: #c0c0c0 url(./images/loading.gif) no-repeat center center; }*/
+
+/* Show-Hide Content */
+.make-link { color: #06F !important; text-decoration: none; margin-bottom: .5em; } 
+.make-link:hover, .make-link:focus, .make-link:active { cursor: pointer; color: #C60; text-decoration: underline; }
+ul.hide { margin: 0 0 0 1em !important; padding: 0 !important; }
+
+	/* Adds 'Plus-Minus' sign to header */
+	.header-shown { background: url('./images/icon_link_plus_minus.png') no-repeat 0 -20px; height: 17px; }
+	.header-hidden { background: url('./images/icon_link_plus_minus.png') no-repeat 0px 3px; height: -14px; }
+
+/* Indicators */
+.indicator { position: absolute; z-index: 10; text-align: right; left: 0; }
+.indicator a { width: 7em; background-color: #FF0; display: block; font-weight: bold; font-size: 12px !important; text-transform: uppercase; color: #09C; text-decoration: none; padding: .5em 1em; }
+.indicator a:hover, .indicator a:focus { background-color: #FFF; text-decoration: underline; cursor: pointer; }
+	#js-ind { top: 30em; }
+
+
+
+/* SPECIFIC PAGE STYLES - - - - - - - - - - - - - - - - */
+
+/* style the 503 page (coming soon page) you activate this template file in the maintenance mode plugin */
+.maintenance {}
+
+#home {}
+
+#about {}
